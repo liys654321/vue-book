@@ -68,7 +68,7 @@ methods: {
 		            password: password
                 })).then(function (result) {
                     if(result.data.code == 200) {
-                        console.log("登录成功")
+                        this.$route.replace({path:'/index'})
                     }
                 })
 

@@ -9,6 +9,8 @@ import router from './router'
 Vue.config.productionTip = false
 
 Vue.use(ElementUI,{ size: 'small', zIndex: 300 })
+
+axios.default.baseURL = 'http://localhost:9093/api'
 Vue.prototype.$http = axios;
 
 
