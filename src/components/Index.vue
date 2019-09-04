@@ -1,7 +1,7 @@
 <template>
 
   <div>
-    index
+    欢迎光临{{this.$store.state.user.username}}
 
   </div>
 

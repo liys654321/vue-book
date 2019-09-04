@@ -48,11 +48,8 @@ data() {
                 { validator: validateUsername, trigger: 'blur' }
             ],
             password: [
-                {
-                    validator: validatePassword,trigger: 'blur'
-                }
+                { validator: validatePassword,trigger: 'blur' }
             ]
-
         },
     };
 },
@@ -68,8 +65,11 @@ methods: {
 		            password: password
                 })).then(function (result) {
                     if(result.data.code == 200) {
-                        this.$route.replace({path:'/index'})
+                        this.$store.commit('login',result.data.data)
+                        this.$router.push({path:'/index'})
                     }
+                }.bind(this)).catch(function (error) {
+		                console.log(error);
                 })
 
             } else {
